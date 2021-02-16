@@ -23,6 +23,8 @@
 		1E393E7525D834CF00E7767C /* FeaturedAlbumItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E393E7425D834CF00E7767C /* FeaturedAlbumItemCollectionViewCell.swift */; };
 		1E393E7A25D834EF00E7767C /* SharedAlbumItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E393E7925D834EF00E7767C /* SharedAlbumItemCell.swift */; };
 		1E393E8225D83ACA00E7767C /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E393E8125D83ACA00E7767C /* FileManagerExtensions.swift */; };
+		1E9D9BA525DB71CF00AB4A84 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D9BA425DB71CF00AB4A84 /* AlbumDetailViewController.swift */; };
+		1E9D9BAC25DB74A300AB4A84 /* PhotoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D9BAB25DB74A300AB4A84 /* PhotoItemCell.swift */; };
 		1EB4C22725D8D10B00BA983C /* PhotoData.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1EB4C22625D8D10B00BA983C /* PhotoData.bundle */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		1E393E7425D834CF00E7767C /* FeaturedAlbumItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedAlbumItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		1E393E7925D834EF00E7767C /* SharedAlbumItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAlbumItemCell.swift; sourceTree = "<group>"; };
 		1E393E8125D83ACA00E7767C /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
+		1E9D9BA425DB71CF00AB4A84 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
+		1E9D9BAB25DB74A300AB4A84 /* PhotoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItemCell.swift; sourceTree = "<group>"; };
 		1EB4C22625D8D10B00BA983C /* PhotoData.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PhotoData.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				1E393E4D25D82E6700E7767C /* AlbumItemDetailViewModel.swift */,
+				1E9D9BA425DB71CF00AB4A84 /* AlbumDetailViewController.swift */,
+				1E9D9BAB25DB74A300AB4A84 /* PhotoItemCell.swift */,
 			);
 			path = AlbumDetail;
 			sourceTree = "<group>";
@@ -322,7 +328,9 @@
 				1E393E3C25D82BC700E7767C /* MyAlbumItemCell.swift in Sources */,
 				1E393E5C25D8326400E7767C /* StringExtensions.swift in Sources */,
 				1E393E7A25D834EF00E7767C /* SharedAlbumItemCell.swift in Sources */,
+				1E9D9BAC25DB74A300AB4A84 /* PhotoItemCell.swift in Sources */,
 				1E393E8225D83ACA00E7767C /* FileManagerExtensions.swift in Sources */,
+				1E9D9BA525DB71CF00AB4A84 /* AlbumDetailViewController.swift in Sources */,
 				1E393E6425D8337C00E7767C /* AlbumsViewController.swift in Sources */,
 				1E393E4525D82D6100E7767C /* AlbumItemViewModel.swift in Sources */,
 				1E393E7525D834CF00E7767C /* FeaturedAlbumItemCollectionViewCell.swift in Sources */,

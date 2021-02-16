@@ -117,7 +117,6 @@ class AlbumsViewController: UIViewController {
                                             heightDimension: .fractionalWidth(2/3))
       let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-      // Show one item plus peek on narrow screens, two items plus peek on wider screens
       let groupFractionalWidth = isWide ? 0.475 : 0.95
       let groupFractionalHeight: Float = isWide ? 1/3 : 2/3
       let groupSize = NSCollectionLayoutSize(
@@ -145,31 +144,37 @@ class AlbumsViewController: UIViewController {
     func generateSharedlbumsLayout() -> NSCollectionLayoutSection {
         
         //Full width and height of the group
-      let itemSize = NSCollectionLayoutSize(
-        widthDimension: .fractionalWidth(1.0),
-        heightDimension: .fractionalHeight(1.0))
-      let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-      let groupSize = NSCollectionLayoutSize(
-        widthDimension: .fractionalWidth(1/2),
-        heightDimension: .fractionalHeight(1/3))
-      let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-      group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-
-      let headerSize = NSCollectionLayoutSize(
-        widthDimension: .fractionalWidth(1.0),
-        heightDimension: .estimated(44))
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalWidth(1/3)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitem: item,
+            count: 2
+        )
         
-      let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-        layoutSize: headerSize,
-        elementKind: AlbumsViewController.sectionHeaderElementKind,
-        alignment: .top)
-
-      let section = NSCollectionLayoutSection(group: group)
-      section.boundarySupplementaryItems = [sectionHeader]
-      section.orthogonalScrollingBehavior = .groupPaging
-
-      return section
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(44)
+        )
+        
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: AlbumsViewController.sectionHeaderElementKind,
+            alignment: .top)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [sectionHeader]
+        section.orthogonalScrollingBehavior = .groupPaging
+        
+        return section
     }
 
     func generateMyAlbumsLayout(isWide: Bool) -> NSCollectionLayoutSection {
@@ -231,9 +236,9 @@ class AlbumsViewController: UIViewController {
 
 extension AlbumsViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//    guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-//    let albumDetailVC = AlbumDetailViewController(withPhotosFromDirectory: item.albumURL)
-//    navigationController?.pushViewController(albumDetailVC, animated: true)
+    guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
+    let albumDetailVC = AlbumDetailViewController(withPhotosFromDirectory: item.albumURL)
+    navigationController?.pushViewController(albumDetailVC, animated: true)
   }
 }
 
